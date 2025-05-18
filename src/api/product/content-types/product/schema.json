@@ -1,0 +1,144 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "products",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": [
+        "mini",
+        "small",
+        "medium",
+        "large"
+      ],
+      "required": true
+    },
+    "soil": {
+      "type": "enumeration",
+      "enum": [
+        "Легкий, добре дренований грунт",
+        "Легкий, поживний грунт",
+        "Легкий, кислий грунт",
+        "Поживний грунт з добрим дренажем",
+        "Вологий, кислий грунт",
+        "Легкий, дренований грунт",
+        "Легкий, з нейтральним або лужним рівнем",
+        "Кислий, лісовий грунт",
+        "Легкий, нейтральний або слабокислий грунт"
+      ],
+      "required": true
+    },
+    "frequencyWatering": {
+      "type": "enumeration",
+      "enum": [
+        "рідко",
+        "часто",
+        "середній рівень поливу"
+      ],
+      "required": true
+    },
+    "sun": {
+      "type": "enumeration",
+      "enum": [
+        "затінення",
+        "відкрите сонце",
+        "тінь"
+      ],
+      "required": true
+    },
+    "humidity": {
+      "type": "enumeration",
+      "enum": [
+        "h10%",
+        "h20%",
+        "h30%",
+        "h40%",
+        "h50%",
+        "h60%",
+        "h70%",
+        "h80%",
+        "h90%",
+        "h100%"
+      ],
+      "required": true
+    },
+    "fertilizer": {
+      "type": "enumeration",
+      "enum": [
+        "універсальне",
+        "квітуче",
+        "листове",
+        "кисле",
+        "цитрусове"
+      ],
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "квітучі",
+        "листові",
+        "цитрусові",
+        "кактус",
+        "деревовидні",
+        "травʼяні"
+      ],
+      "required": true
+    },
+    "descriptionTitle": {
+      "type": "string"
+    },
+    "descriptionText": {
+      "type": "text"
+    },
+    "productId": {
+      "type": "uid",
+      "required": true
+    },
+    "price": {
+      "type": "integer"
+    },
+    "fullPrice": {
+      "type": "integer",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Вазони",
+        "Квіти",
+        "Добрива"
+      ],
+      "required": true
+    },
+    "categoryId": {
+      "type": "enumeration",
+      "enum": [
+        "flowers",
+        "plants",
+        "fertilizers"
+      ],
+      "required": true
+    },
+    "mainImage": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
