@@ -137,8 +137,15 @@
       "required": true
     },
     "mainImage": {
-      "type": "text",
-      "required": true
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

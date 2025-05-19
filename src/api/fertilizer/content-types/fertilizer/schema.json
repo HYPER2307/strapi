@@ -1,0 +1,130 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fertilizers",
+  "info": {
+    "singularName": "fertilizer",
+    "pluralName": "fertilizers",
+    "displayName": "fertilizers",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Сухе",
+        "Рідке ",
+        "Газоподібне"
+      ]
+    },
+    "method": {
+      "type": "enumeration",
+      "enum": [
+        "Кореневий",
+        "Позакореневий",
+        "Заклаедення при посадці",
+        "Підживлення в період росту"
+      ]
+    },
+    "speed": {
+      "type": "enumeration",
+      "enum": [
+        "Швидкодіюче",
+        "Повільної дії"
+      ]
+    },
+    "solubility": {
+      "type": "enumeration",
+      "enum": [
+        "Водорозчинні",
+        "Нерозчинні",
+        "Малорозчинні"
+      ]
+    },
+    "volume": {
+      "type": "enumeration",
+      "enum": [
+        "л0.2",
+        "л0.5",
+        "л0.7",
+        "л1",
+        "л5",
+        "л10",
+        "л15",
+        "л20",
+        "л25",
+        "л50"
+      ]
+    },
+    "usingPeriod": {
+      "type": "enumeration",
+      "enum": [
+        "Весна",
+        "Літо",
+        "Осінь",
+        "Зима",
+        "До посалки",
+        "Після посадки",
+        "Під час цвітіння"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "descriptionTitle": {
+      "type": "string"
+    },
+    "descriptionText": {
+      "type": "text"
+    },
+    "origin": {
+      "type": "enumeration",
+      "enum": [
+        "Мінеральні",
+        "Органічні",
+        "Органо-мінеральні"
+      ]
+    },
+    "acidity": {
+      "type": "enumeration",
+      "enum": [
+        "Кислі",
+        "Лужні",
+        "Нейтральні"
+      ]
+    },
+    "productId": {
+      "type": "uid"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "fullPrice": {
+      "type": "integer"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Добриво"
+      ]
+    },
+    "categoryId": {
+      "type": "enumeration",
+      "enum": [
+        "fertilizer"
+      ]
+    },
+    "mainImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

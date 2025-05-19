@@ -437,6 +437,112 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFertilizerFertilizer extends Struct.CollectionTypeSchema {
+  collectionName: 'fertilizers';
+  info: {
+    description: '';
+    displayName: 'fertilizers';
+    pluralName: 'fertilizers';
+    singularName: 'fertilizer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    acidity: Schema.Attribute.Enumeration<
+      [
+        '\u041A\u0438\u0441\u043B\u0456',
+        '\u041B\u0443\u0436\u043D\u0456',
+        '\u041D\u0435\u0439\u0442\u0440\u0430\u043B\u044C\u043D\u0456',
+      ]
+    >;
+    category: Schema.Attribute.Enumeration<
+      ['\u0414\u043E\u0431\u0440\u0438\u0432\u043E']
+    >;
+    categoryId: Schema.Attribute.Enumeration<['fertilizer']>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descriptionText: Schema.Attribute.Text;
+    descriptionTitle: Schema.Attribute.String;
+    fullPrice: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::fertilizer.fertilizer'
+    > &
+      Schema.Attribute.Private;
+    mainImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    method: Schema.Attribute.Enumeration<
+      [
+        '\u041A\u043E\u0440\u0435\u043D\u0435\u0432\u0438\u0439',
+        '\u041F\u043E\u0437\u0430\u043A\u043E\u0440\u0435\u043D\u0435\u0432\u0438\u0439',
+        '\u0417\u0430\u043A\u043B\u0430\u0435\u0434\u0435\u043D\u043D\u044F \u043F\u0440\u0438 \u043F\u043E\u0441\u0430\u0434\u0446\u0456',
+        '\u041F\u0456\u0434\u0436\u0438\u0432\u043B\u0435\u043D\u043D\u044F \u0432 \u043F\u0435\u0440\u0456\u043E\u0434 \u0440\u043E\u0441\u0442\u0443',
+      ]
+    >;
+    name: Schema.Attribute.String;
+    origin: Schema.Attribute.Enumeration<
+      [
+        '\u041C\u0456\u043D\u0435\u0440\u0430\u043B\u044C\u043D\u0456',
+        '\u041E\u0440\u0433\u0430\u043D\u0456\u0447\u043D\u0456',
+        '\u041E\u0440\u0433\u0430\u043D\u043E-\u043C\u0456\u043D\u0435\u0440\u0430\u043B\u044C\u043D\u0456',
+      ]
+    >;
+    price: Schema.Attribute.Integer;
+    productId: Schema.Attribute.UID;
+    publishedAt: Schema.Attribute.DateTime;
+    solubility: Schema.Attribute.Enumeration<
+      [
+        '\u0412\u043E\u0434\u043E\u0440\u043E\u0437\u0447\u0438\u043D\u043D\u0456',
+        '\u041D\u0435\u0440\u043E\u0437\u0447\u0438\u043D\u043D\u0456',
+        '\u041C\u0430\u043B\u043E\u0440\u043E\u0437\u0447\u0438\u043D\u043D\u0456',
+      ]
+    >;
+    speed: Schema.Attribute.Enumeration<
+      [
+        '\u0428\u0432\u0438\u0434\u043A\u043E\u0434\u0456\u044E\u0447\u0435',
+        '\u041F\u043E\u0432\u0456\u043B\u044C\u043D\u043E\u0457 \u0434\u0456\u0457',
+      ]
+    >;
+    type: Schema.Attribute.Enumeration<
+      [
+        '\u0421\u0443\u0445\u0435',
+        '\u0420\u0456\u0434\u043A\u0435 ',
+        '\u0413\u0430\u0437\u043E\u043F\u043E\u0434\u0456\u0431\u043D\u0435',
+      ]
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    usingPeriod: Schema.Attribute.Enumeration<
+      [
+        '\u0412\u0435\u0441\u043D\u0430',
+        '\u041B\u0456\u0442\u043E',
+        '\u041E\u0441\u0456\u043D\u044C',
+        '\u0417\u0438\u043C\u0430',
+        '\u0414\u043E \u043F\u043E\u0441\u0430\u043B\u043A\u0438',
+        '\u041F\u0456\u0441\u043B\u044F \u043F\u043E\u0441\u0430\u0434\u043A\u0438',
+        '\u041F\u0456\u0434 \u0447\u0430\u0441 \u0446\u0432\u0456\u0442\u0456\u043D\u043D\u044F',
+      ]
+    >;
+    volume: Schema.Attribute.Enumeration<
+      [
+        '\u043B0.2',
+        '\u043B0.5',
+        '\u043B0.7',
+        '\u043B1',
+        '\u043B5',
+        '\u043B10',
+        '\u043B15',
+        '\u043B20',
+        '\u043B25',
+        '\u043B50',
+      ]
+    >;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -539,7 +645,10 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'api::product.product'
     > &
       Schema.Attribute.Private;
-    mainImage: Schema.Attribute.Text & Schema.Attribute.Required;
+    mainImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     price: Schema.Attribute.Integer;
     productId: Schema.Attribute.UID & Schema.Attribute.Required;
@@ -1096,6 +1205,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
       'api::category.category': ApiCategoryCategory;
+      'api::fertilizer.fertilizer': ApiFertilizerFertilizer;
       'api::global.global': ApiGlobalGlobal;
       'api::product.product': ApiProductProduct;
       'plugin::content-releases.release': PluginContentReleasesRelease;
